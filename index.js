@@ -14,13 +14,13 @@ function getHumanChoice() {
   return humanChoice.toLowerCase();
 }
 
-let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice();
 let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-    //if human wins
+  humanChoice = getHumanChoice();
+  computerChoice = getComputerChoice();
+  //if human wins
   if (humanChoice === "paper" && computerChoice === "rock") {
     humanScore++;
     return console.log("You win! Paper beats Rock");
@@ -41,7 +41,10 @@ function playRound(humanChoice, computerChoice) {
   } else if (humanChoice === "paper" && computerChoice === "scissors") {
     computerScore++;
     return console.log("You lose! Scissors beats Paper");
+  } else {
+    return console.log("no winner");
   }
 }
-console.log(playRound(humanChoice, computerChoice))
-console.log(humanScore , computerScore)
+for (let i = 0; i < 2; i++) {
+  playRound();
+}
