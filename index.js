@@ -45,6 +45,18 @@ function playRound(humanChoice, computerChoice) {
     return console.log("no winner");
   }
 }
-for (let i = 0; i < 2; i++) {
-  playRound();
+// main game loop 
+function playGame () {
+    for (let i = 0; i<5 ; i++){
+      playRound();
+    }
+    if (humanScore > computerScore){
+      return console.log('You win')
+    }else if (computerScore > humanScore) {
+      return console.log('You lose')
+    }else{
+      return console.log('Draw');
+    }
 }
+
+playGame();
